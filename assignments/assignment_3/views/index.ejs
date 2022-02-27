@@ -1,0 +1,52 @@
+ <html>
+ <head>
+     <style>
+         body{
+            display: flex;
+         }
+         .center{
+             margin-left:auto;
+             margin-right: auto;
+         }
+
+        tr,table,td,th{
+             border: 1px solid;
+         }
+        #button a{
+             text-decoration:none;
+         }
+         #button{
+             margin-left:200px;
+             
+             margin-top: 20px;
+             
+         }
+         tr:nth-child(2n){
+             background-color: rgb(218, 218, 218);
+         }
+      
+
+     </style>
+ </head>
+ 
+ <body>
+    <div class="center">
+<table>
+    <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>phoneNumber</th></tr>
+    <%users.forEach(user=>{%>
+        <tr>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+            <td><%=user.phoneNumber%></td>
+        </tr>
+    <%})%>
+ 
+</table>
+<button id="button"><a href="/form">Add User</a></button>
+</div>
+</body>
+</html>
+   

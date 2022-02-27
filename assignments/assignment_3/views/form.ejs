@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <style>
+        span {
+            color: red;
+        }
+
+        form {
+
+            border: 1px salmon;
+        }
+
+        .fieldset {
+            font-size: 20px;
+            border: 1px solid blue;
+            text-align: center;
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(151, 39, 117);
+
+        }
+
+        caption {
+            margin-bottom: 20px;
+            padding-left: 30%;
+            font-size: 20px;
+
+        }
+
+        input {
+            width: 250px;
+            border-radius: 3px;
+        }
+
+        button {
+            background-image: linear-gradient(rgb(116, 40, 40), rgb(202, 202, 19));
+            border-radius: 10px;
+        }
+
+        button:hover {
+            /* background-color: */
+            background-color: blue;
+
+            box-shadow: -2px -2px 2px lightblue;
+
+
+        }
+
+        body {
+            background-image: url("https://images.unsplash.com/photo-1587931338382-aecda7e43025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div>
+        <form action="/user/add" method="POST">
+            <fieldset class="fieldset">
+                <legend>Token Generator</legend>
+                <table class="center">
+                    <caption id="caption">Enter Your Details Here</caption>
+                    <td>
+                        <label class="requied">Enter your Name<span>*</span></label>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <input name="name" type="text" placeholder="Enter your Name" maxlength="30" required>
+                    </td>
+                    </tr><br>
+                    <tr>
+                        <td><label class="requied">Enter Email</label><span>*</span>
+                        <td>:</td>
+                        </td>
+
+                        <td>
+                            <input name="email" type="email" placeholder="Enter your Email" maxlength="30" required>
+                        </td>
+                    </tr><br>
+                    <tr>
+                        <td>
+                            <label class="requied">Enter phoneNumber</label><span>*</span>
+                        </td>
+                        <td>:</td>
+                        <td>
+                            <input name="number" placeholder="Enter your phone Number" maxlength="10" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><button type="submit" id="submit">submit</button></td>
+                    </tr>
+            </fieldset>
+            </table>
+        </form>
+    </div>
+    <script>
+        let submit = document.getElementById("caption")
+        submit.addEventListener("onclick", () => { alert("u entered") })
+    </script>
+</body>
+
+</html>
