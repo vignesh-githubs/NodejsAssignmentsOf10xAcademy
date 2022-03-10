@@ -1,0 +1,51 @@
+.main-heading{
+    text-align:center;
+    background-color: peru;
+}
+.input-section{
+    margin:2px 400px;
+}
+.font-styling{
+    font-size: x-large;
+}
+.null{
+    color:yellow;
+}
+.truetype{
+   color:green;
+}
+.falsetype{
+    color:red;
+}
+.display-content{
+    display: flex;
+    justify-content: space-around;
+    border:1px solid;
+
+    width:80%;
+    margin:0 100px;
+}
+.basic-null,.promt{
+    display: flex;
+    justify-content: space-between;
+ 
+    width:90%;
+}
+.rel{
+    position: relative;
+    top:30px
+}
+.posting{
+    display: flex;
+    margin-top:30px;
+}
+.delete{
+    background-color: rgb(65, 55, 55);
+}
+.ispromote{
+    background-color: greenyellow;
+}
+.isdemote{
+    color:red;
+}
+
