@@ -1,0 +1,80 @@
+<hmtml>
+
+    <head>
+        <title>Todo App</title>
+        <link href="/styling.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <h2 class="main-heading">Todo App</h2>
+        <div class="input-section">
+            <form action="/data/collect" method="POST">
+                <label>Enter your name :</label>
+                <input type="text" value="" name="name" required placeholder="name">&nbsp;&nbsp;
+                <label>Enter your Email :</label>
+                <input type="email" value="" name="email" required placeholder="email">
+                <button>submit</button>
+            </form>
+        </div>
+        <%users.forEach(user=>{%>
+            <div class="display-content">
+                <%if(user.isPromte===null){%>
+
+                    <div class="basic-null">
+                        <div>
+                            <p class="null font-styling">
+                                <%=user.name%>
+                            </p>
+                        </div>
+                        <div class="posting">
+                            <form method="POST" action="/users/<%= user._id %>/<%=true%>?_method=PUT">
+                                <button id="delete-<%= user.name %>" class="ispromote">isPromote</button>
+                            </form>
+                            </form>
+                            <form method="POST" action="/users/<%= user._id %>/<%=false%>?_method=PUT">
+                                <button id="delete-<%= user.name %>" class="isdemote">isDemote</button>
+                            </form>
+                        </div>
+                    </div>
+                    <%}%>
+                        <%if(user.isPromte==true){%>
+                            <div class="promt">
+                                <div>
+                                    <p class="truetype font-styling">
+                                        <%=user.name%>
+                                    </p>
+                                </div>
+                                <div class="rel">
+                                    <form method="POST" action="/users/<%= user._id %>/<%=false%>?_method=PUT">
+                                        <button id="edit-<%= user.name %>" type="submit"
+                                            class="isdemote">isDemote</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <%}%>
+                                <%if(user.isPromte==false){%>
+                                    <div class="promt">
+                                        <div>
+                                            <p class="falsetype font-styling">
+                                                <%=user.name%>
+                                            </p>
+                                        </div>
+                                        <div class="rel">
+                                            <form method="POST" action="/users/<%= user._id %>/<%=true%>?_method=PUT">
+                                                <button id="edit-<%= user.name %>" type="submit"
+                                                    class="ispromote">isPromote</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <%}%>
+                                        <div class="rel">
+
+                                            <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+                                                <button id="delete-<%= user.name %>" class="delete">Delete</button>
+                                            </form>
+                                        </div>
+            </div>
+            <%})%>
+
+    </body>
+</hmtml>
